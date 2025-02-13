@@ -235,6 +235,16 @@ nav {
     margin-bottom: 1rem;
 }
 
+.brand-logo {
+    flex: 0 0 200px;
+    height: 200px; /* Adjusted height to make the box taller */
+    object-fit: cover;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Scrolling Sections */
 .brands-scroll,
 .global-gallery {
