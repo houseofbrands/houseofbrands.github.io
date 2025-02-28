@@ -125,7 +125,7 @@ nav {
     justify-content: center;
     padding: 2rem;
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/api/placeholder/1920/1080');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/banner.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
