@@ -114,7 +114,6 @@ nav {
     display: flex;
     gap: 2rem;
 }
-
 .nav-button {
     padding: 0.5rem 1.5rem;
     border: none;
@@ -124,16 +123,13 @@ nav {
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .nav-button.contact {
     background: var(--gold);
 }
-
 .nav-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 .hero {
     height: 100vh;
     position: relative;
@@ -142,7 +138,6 @@ nav {
     background-position: center;
     background-attachment: fixed;
 }
-
 .stats-container {
     position: absolute;
     bottom: 0;
@@ -151,7 +146,6 @@ nav {
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     padding: 2rem;
 }
-
 .stats {
     max-width: 1200px;
     margin: 0 auto;
@@ -162,7 +156,6 @@ nav {
     opacity: 1;
     transform: none;
 }
-
 .stat {
     text-align: center;
     color: white;
@@ -174,12 +167,10 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2rem;
 }
-
 .stat:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.15);
 }
-
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
@@ -188,7 +179,6 @@ nav {
     line-height: 1;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
-
 .stat-label {
     font-size: 1rem;
     color: rgba(255,255,255,0.9);
@@ -441,7 +431,6 @@ nav {
     .stat-label {
         font-size: 1rem;
     }
-    
     .overlay-content {
         width: 90%;
         padding: 2rem;
@@ -449,6 +438,64 @@ nav {
 }
 
 /*Hero Styles */
+@media (max-width: 480px) {
+    /* Improved mobile navigation */
+    nav {
+        padding: 0.75rem;
+    }
+    
+    .logo-container {
+        margin-bottom: 0;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+        white-space: nowrap;
+        margin-bottom: 0.1rem;
+    }
+    
+    .subtitle {
+        font-size: 0.65rem;
+        line-height: 1.2;
+    }
+    
+    .subtitle-part {
+        display: block;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0.35rem;
+        flex-shrink: 0;
+    }
+    
+    .nav-button {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        border-radius: 4px;
+    }
+    
+    /* Specific styling for House of Brands button to prevent wrapping */
+    .nav-button:nth-child(2) {
+        max-width: none;
+        flex-shrink: 1;
+    }
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 360px) {
+    .nav-button {
+        padding: 0.35rem 0.4rem;
+        font-size: 0.7rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+}
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -471,11 +518,9 @@ nav {
     .stat-number {
         font-size: 2rem;
     }
-    
     .overlay-content {
         padding: 1.5rem;
     }
-    
     .overlay-content h2 {
         font-size: 1.5rem;
     }
@@ -542,26 +587,70 @@ footer {
         flex: 0 0 300px;
         height: 450px;
     }
+    
+    /* Improved subtitle display */
+    .subtitle {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.4;
+    }
+    
+    .subtitle::after {
+        content: "";
+        display: block;
+    }
 }
 
 /* Additional styles for smaller screens */
 @media (max-width: 480px) {
-    .nav-button {
-        padding: 0.2rem 0.6rem;
-        font-size: 0.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .nav-button.contact, .nav-button.blog {
-        padding: 0.1rem 0.4rem;
-        font-size: 0.7rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .nav-links {
+    /* Completely redesigned mobile navigation */
+    nav {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+    
+    .logo-container {
+        margin-bottom: 0.8rem;
+        width: 100%;
+    }
+    
+    .subtitle {
+        font-size: 0.75rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .subtitle-part {
+        display: block;
+    }
+    
+    .nav-links {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+    }
+    
+    .nav-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        text-align: center;
+        flex: 1;
+        margin: 0 0.25rem;
+        display: inline-block;
+    }
+    
+    .nav-button:first-child {
+        margin-left: 0;
+    }
+    
+    .nav-button:last-child {
+        margin-right: 0;
+    }
+    
+    .nav-button.contact {
+        background: var(--gold);
     }
 }
