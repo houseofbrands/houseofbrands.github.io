@@ -71,7 +71,6 @@ body {
     50% { background-position: 100% 100%; }
     100% { background-position: 0% 0%; }
 }
-
 nav {
     position: fixed;
     top: 0;
@@ -85,8 +84,25 @@ nav {
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
-
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+.subtitle {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-color);
@@ -120,67 +136,43 @@ nav {
 
 .hero {
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/banner.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: white;
 }
 
-.hero-content {
-    max-width: 1000px;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
+.stats-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     padding: 2rem;
 }
 
-.hero h1 {
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    letter-spacing: 2px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 3rem;
-    letter-spacing: 1px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards 0.2s;
-}
-
 .stats {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 4rem;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards 0.4s;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 1rem;
+    opacity: 1;
+    transform: none;
 }
 
 .stat {
     text-align: center;
-    padding: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     min-width: 200px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 2rem;
 }
 
 .stat:hover {
@@ -189,20 +181,43 @@ nav {
 }
 
 .stat-number {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--gold);
     margin-bottom: 0.5rem;
     line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .stat-label {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgba(255,255,255,0.9);
     font-weight: 500;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .stat {
+        min-width: 160px;
+        padding: 1.5rem;
+    }
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
 
 /* Expertise Section */
 .expertise {
@@ -217,32 +232,130 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .expertise-card {
     padding: 2rem;
     background: var(--primary-bg);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
-
 .expertise-card:hover {
     transform: translateY(-5px);
 }
-
 .expertise-card h3 {
     color: var(--gold);
     margin-bottom: 1rem;
 }
+.card-full-content {
+    display: none;
+}
 
-.brand-logo {
-    flex: 0 0 200px;
-    height: 200px; /* Adjusted height to make the box taller */
-    object-fit: cover;
-    border-radius: 10px;
+/* Read more link styling */
+.read-more-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.read-more-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--gold);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.read-more-link:hover {
+    color: var(--accent-color);
+}
+
+.read-more-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: var(--accent-color);
+}
+
+/* Fullscreen overlay styles */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fullscreen-overlay.active {
+    opacity: 1;
+}
+
+.overlay-content {
+    background-color: white;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 15px;
+    padding: 3rem;
+    position: relative;
+    overflow-y: auto;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.fullscreen-overlay.active .overlay-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.overlay-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.overlay-close:hover {
+    color: var(--gold);
+}
+
+.overlay-content h2 {
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.overlay-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 /* Scrolling Sections */
@@ -328,6 +441,11 @@ nav {
     .stat-label {
         font-size: 1rem;
     }
+    
+    .overlay-content {
+        width: 90%;
+        padding: 2rem;
+    }
 }
 
 /*Hero Styles */
@@ -352,6 +470,14 @@ nav {
 
     .stat-number {
         font-size: 2rem;
+    }
+    
+    .overlay-content {
+        padding: 1.5rem;
+    }
+    
+    .overlay-content h2 {
+        font-size: 1.5rem;
     }
 }
 

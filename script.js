@@ -24,6 +24,7 @@ const initializeAOS = () => {
     });
 };
 
+// Make sure this part of your script.js is correct
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize our animation observer
     initializeAOS();
@@ -36,6 +37,83 @@ document.addEventListener('DOMContentLoaded', function() {
         if (hero) {
             hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
         }
+    });
+
+    // Read More functionality for expertise cards
+    const readMoreLinks = document.querySelectorAll('.read-more-link');
+    
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.expertise-card');
+            const content = card.querySelector('.card-full-content').innerHTML;
+            const title = card.querySelector('h3').textContent;
+            
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'fullscreen-overlay';
+            
+            // Create content container
+            const contentContainer = document.createElement('div');
+            contentContainer.className = 'overlay-content';
+            
+            // Add close button
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'overlay-close';
+            closeBtn.innerHTML = '&times;';
+            
+            // Add title
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = title;
+            
+            // Add content
+            const contentElement = document.createElement('div');
+            contentElement.className = 'overlay-text';
+            contentElement.innerHTML = content;
+            
+            // Assemble the overlay
+            contentContainer.appendChild(closeBtn);
+            contentContainer.appendChild(titleElement);
+            contentContainer.appendChild(contentElement);
+            overlay.appendChild(contentContainer);
+            
+            // Add to body
+            document.body.appendChild(overlay);
+            document.body.classList.add('no-scroll');
+            
+            // Animation
+            setTimeout(() => {
+                overlay.classList.add('active');
+            }, 10);
+            
+            // Close functionality
+            closeBtn.addEventListener('click', function() {
+                overlay.classList.remove('active');
+                setTimeout(() => {
+                    document.body.removeChild(overlay);
+                    document.body.classList.remove('no-scroll');
+                }, 300);
+            });
+        });
+    });
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.expertise-card');
+            card.classList.toggle('expanded');
+            
+            if (card.classList.contains('expanded')) {
+                this.textContent = 'Read Less';
+            } else {
+                this.textContent = 'Read More';
+                
+                // Smooth scroll back to the card top when collapsing
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            }
+        });
     });
 
     // Horizontal scroll animation for brands and gallery
