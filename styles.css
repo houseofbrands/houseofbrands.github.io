@@ -491,7 +491,6 @@ nav {
         padding: 0.35rem 0.4rem;
         font-size: 0.7rem;
     }
-    
     .logo {
         font-size: 1.1rem;
     }
@@ -587,14 +586,11 @@ footer {
         flex: 0 0 300px;
         height: 450px;
     }
-    
-    /* Improved subtitle display */
     .subtitle {
         display: flex;
         flex-direction: column;
         line-height: 1.4;
     }
-    
     .subtitle::after {
         content: "";
         display: block;
@@ -603,54 +599,50 @@ footer {
 
 /* Additional styles for smaller screens */
 @media (max-width: 480px) {
-    /* Completely redesigned mobile navigation */
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-    
-    .logo-container {
-        margin-bottom: 0.8rem;
-        width: 100%;
-    }
-    
-    .subtitle {
-        font-size: 0.75rem;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .subtitle-part {
-        display: block;
-    }
-    
-    .nav-links {
-        width: 100%;
+        padding: 0.75rem 1rem;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: 0.5rem;
+        align-items: center;
     }
-    
+    .logo-container {
+        margin-bottom: 0;
+        max-width: 50%;
+    }
+    .logo {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+        letter-spacing: 0.5px;
+    }
+    .subtitle {
+        font-size: 0.6rem;
+        line-height: 1.2;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 0.4rem;
+        margin: 0;
+        width: auto;
+    }
     .nav-button {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.7rem;
         border-radius: 4px;
+        white-space: nowrap;
         text-align: center;
-        flex: 1;
-        margin: 0 0.25rem;
-        display: inline-block;
+        min-width: auto;
     }
-    
-    .nav-button:first-child {
-        margin-left: 0;
+}
+@media (max-width: 360px) {
+    nav {
+        padding: 0.75rem 0.5rem;
     }
-    
-    .nav-button:last-child {
-        margin-right: 0;
+    .logo {
+        font-size: 1rem;
     }
-    
-    .nav-button.contact {
-        background: var(--gold);
+    .nav-button {
+        padding: 0.35rem 0.45rem;
+        font-size: 0.65rem;
     }
 }
