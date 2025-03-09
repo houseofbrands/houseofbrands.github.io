@@ -414,11 +414,9 @@ nav {
         height: 35px;
         font-size: 1.2rem;
     }
-    
     .prev-btn {
         left: 10px;
     }
-    
     .next-btn {
         right: 10px;
     }
@@ -956,5 +954,219 @@ footer {
     .partners-grid,
     .brands-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* About Page Styles */
+.page-content {
+    padding: 14rem 2rem 4rem;
+    background: var(--primary-bg);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-content h1 {
+    color: var(--accent-color);
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-top: 2rem;
+}
+
+.page-content h1:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin: 4rem 0;
+}
+
+.image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 120px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+    max-height: 600px;
+}
+
+.image-container:hover img {
+    transform: scale(1.03);
+}
+
+.text-container {
+    line-height: 1.8;
+    padding-right: 2rem;
+}
+
+.text-container p {
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.text-container h3 {
+    color: var(--gold);
+    margin: 3rem 0 2rem;
+    font-size: 1.8rem;
+}
+
+/* Responsive adjustments for about page */
+@media (max-width: 992px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .image-container {
+        max-width: 500px;
+        margin: 0 auto 3rem;
+        position: relative;
+        top: auto;
+    }
+    
+    .text-container {
+        padding-right: 0;
+    }
+    
+    .text-container h3 {
+        margin: 2.5rem 0 1.5rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 12rem 1.5rem 3rem;
+    }
+    
+    .page-content h1 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        padding-top: 1.5rem;
+    }
+    
+    .text-container p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .text-container h3 {
+        font-size: 1.4rem;
+        margin: 2rem 0 1.2rem;
+    }
+    
+    .content-grid {
+        margin: 3rem 0;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-content {
+        padding: 10rem 1rem 2rem;
+    }
+    
+    .page-content h1 {
+        font-size: 1.75rem;
+        margin-bottom: 2.5rem;
+        padding-top: 1rem;
+    }
+    
+    .content-grid {
+        margin: 2rem 0;
+        gap: 2rem;
+    }
+    
+    .image-container {
+        margin: 0 auto 2.5rem;
+    }
+    
+    .text-container h3 {
+        font-size: 1.3rem;
+        margin: 2rem 0 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Achievement List Styles */
+.achievement-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.achievement-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.achievement-list li::before {
+    content: '✔';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* Update text container styles */
+.text-container h3 {
+    color: var(--gold);
+    margin: 3rem 0 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.text-container p {
+    margin-bottom: 1.8rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .achievement-list {
+        padding-left: 1rem;
+    }
+    
+    .achievement-list li {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+    
+    .achievement-list li::before {
+        left: -1.2rem;
     }
 }

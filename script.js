@@ -37,72 +37,72 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Read More functionality for expertise cards
-    const readMoreLinks = document.querySelectorAll('.read-more-link');
+    // // Read More functionality for expertise cards
+    // // const readMoreLinks = document.querySelectorAll('.read-more-link');
     
-    readMoreLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const card = this.closest('.expertise-card');
-            const content = card.querySelector('.card-full-content').innerHTML;
-            const title = card.querySelector('h3').textContent;
+    // //readMoreLinks.forEach(link => {
+    //     link.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         const card = this.closest('.expertise-card');
+    //         const content = card.querySelector('.card-full-content').innerHTML;
+    //         const title = card.querySelector('h3').textContent;
             
-            const overlay = document.createElement('div');
-            overlay.className = 'fullscreen-overlay';
+    //         const overlay = document.createElement('div');
+    //         overlay.className = 'fullscreen-overlay';
             
-            const contentContainer = document.createElement('div');
-            contentContainer.className = 'overlay-content';
+    //         const contentContainer = document.createElement('div');
+    //         contentContainer.className = 'overlay-content';
             
-            const closeBtn = document.createElement('button');
-            closeBtn.className = 'overlay-close';
-            closeBtn.innerHTML = '×';
+    //         const closeBtn = document.createElement('button');
+    //         closeBtn.className = 'overlay-close';
+    //         closeBtn.innerHTML = '×';
             
-            const titleElement = document.createElement('h2');
-            titleElement.textContent = title;
+    //         const titleElement = document.createElement('h2');
+    //         titleElement.textContent = title;
             
-            const contentElement = document.createElement('div');
-            contentElement.className = 'overlay-text';
-            contentElement.innerHTML = content;
+    //         const contentElement = document.createElement('div');
+    //         contentElement.className = 'overlay-text';
+    //         contentElement.innerHTML = content;
             
-            contentContainer.appendChild(closeBtn);
-            contentContainer.appendChild(titleElement);
-            contentContainer.appendChild(contentElement);
-            overlay.appendChild(contentContainer);
+    //         contentContainer.appendChild(closeBtn);
+    //         contentContainer.appendChild(titleElement);
+    //         contentContainer.appendChild(contentElement);
+    //         overlay.appendChild(contentContainer);
             
-            document.body.appendChild(overlay);
-            document.body.classList.add('no-scroll');
+    //         document.body.appendChild(overlay);
+    //         document.body.classList.add('no-scroll');
             
-            setTimeout(() => {
-                overlay.classList.add('active');
-            }, 10);
+    //         setTimeout(() => {
+    //             overlay.classList.add('active');
+    //         }, 10);
             
-            closeBtn.addEventListener('click', function() {
-                overlay.classList.remove('active');
-                setTimeout(() => {
-                    document.body.removeChild(overlay);
-                    document.body.classList.remove('no-scroll');
-                }, 300);
-            });
-        });
-    });
+    //         closeBtn.addEventListener('click', function() {
+    //             overlay.classList.remove('active');
+    //             setTimeout(() => {
+    //                 document.body.removeChild(overlay);
+    //                 document.body.classList.remove('no-scroll');
+    //             }, 300);
+    //         });
+    //     });
+    // });
 
-    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    // const readMoreButtons = document.querySelectorAll('.read-more-btn');
     
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.expertise-card');
-            card.classList.toggle('expanded');
+    // readMoreButtons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         const card = this.closest('.expertise-card');
+    //         card.classList.toggle('expanded');
             
-            if (card.classList.contains('expanded')) {
-                this.textContent = 'Read Less';
-            } else {
-                this.textContent = 'Read More';
-                setTimeout(() => {
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-            }
-        });
-    });
+    //         if (card.classList.contains('expanded')) {
+    //             this.textContent = 'Read Less';
+    //         } else {
+    //             this.textContent = 'Read More';
+    //             setTimeout(() => {
+    //                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    //             }, 100);
+    //         }
+    //     });
+    // });
 
     // Horizontal scroll animation for brands and gallery
     const scrollSections = document.querySelectorAll('.scroll-container');
