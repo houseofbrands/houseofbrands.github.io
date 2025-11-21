@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 
 const history = [
   {
-    period: "The Foundation",
-    title: "Learning from Giants",
-    description: "Honing skills in design, sourcing, and retail strategies with global leaders.",
+    period: "Foundations",
+    title: "Strategic Mastery",
+    description: "Driving innovation and market penetration for global legacy brands.",
     brands: ["Maxima", "Timex", "Danish Design", "Jacob Jensen", "Lee Cooper", "Kappa"]
   },
   {
-    period: "The Expansion",
-    title: "Building House of Brands",
-    description: "Establishing independent manufacturing capabilities in India & China.",
-    brands: ["Manufacturing", "Supply Chain", "Global Logistics"]
+    period: "Expansion",
+    title: "Architecting Scale",
+    description: "Establishing proprietary manufacturing infrastructure across key Asian markets.",
+    brands: ["Vertical Integration", "Supply Chain Optimization", "Global Logistics"]
   },
   {
-    period: "The Present",
-    title: "Myntra Strategic Partner",
-    description: "Leading design and development for India's top private labels.",
+    period: "Present",
+    title: "Market Dominance",
+    description: "Defining the private label landscape for India's premier fashion ecosystems.",
     brands: ["Roadster", "Wrogn", "House of Pataudi", "Dressberry", "Mast & Harbour"]
   }
 ];
@@ -37,7 +37,7 @@ export default function ExperienceTimeline() {
             23 Years of Excellence
           </span>
           <h2 className="text-4xl md:text-6xl font-bold max-w-3xl leading-tight">
-            From mastering international craftsmanship to building a manufacturing powerhouse.
+            From mastering international craftsmanship to architecting a global manufacturing powerhouse.
           </h2>
         </motion.div>
 
@@ -76,4 +76,3 @@ export default function ExperienceTimeline() {
     </section>
   );
 }
-

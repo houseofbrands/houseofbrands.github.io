@@ -2,87 +2,74 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Diamond } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6 md:px-12 bg-white text-black overflow-hidden">
+    <section id="about" className="py-32 px-6 md:px-12 bg-[#0a0a0a] text-[#ededed] border-t border-white/10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div className="grid md:grid-cols-2 gap-16 relative">
+          
+          {/* Central Divider (Desktop) */}
+          <div className="hidden md:flex absolute inset-0 justify-center pointer-events-none">
+            <div className="h-full w-px bg-white/10 relative">
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0a0a0a] p-4 text-gray-500">
+                 <Diamond size={24} strokeWidth={1} />
+               </div>
+            </div>
+          </div>
+
+          {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-[4/5] md:aspect-square w-full max-w-md mx-auto md:max-w-none"
+            className="space-y-8 text-xl md:text-2xl leading-relaxed text-gray-500 font-light md:pr-12"
           >
-            <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-            <Image
-              src="/assets/aboutme/rajan.JPG"
-              alt="Rajan Mehta"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+            <p>
+              I’m an architect of modern retail & <br/>
+              <strong className="text-white font-medium">Global E-commerce Pioneer</strong>, designing strategies that build and run brands with partners such as <strong className="text-white font-medium">Myntra</strong> and <strong className="text-white font-medium">Flipkart</strong>.
+            </p>
+            
+            <p>
+              Currently growing <strong className="text-white font-medium">House of Brands™</strong>, my vehicle for bridging the gap between international trends and the Indian consumer.
+            </p>
+
+            <p>
+              I’ve also developed over <strong className="text-white font-medium">800+ unique product lines</strong>, serving the fashion community for more than two decades.
+            </p>
+
+            <p>
+              We believe in brands and products that have a point of view. Take a look at some of our work below.
+            </p>
           </motion.div>
 
-          <div>
-            <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-sm font-bold tracking-widest uppercase text-gray-500 mb-8 block"
-            >
-              The Visionary
-            </motion.span>
-            
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold leading-tight mb-8"
-            >
-              Designing the future of <br className="hidden md:block"/> time & fashion.
-            </motion.h2>
+          {/* Image Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col items-start md:pl-12"
+          >
+            <div className="relative w-full max-w-md aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700 bg-[#111]">
+               <Image
+                src="/assets/aboutme/rajan.JPG"
+                alt="Rajan Mehta"
+                fill
+                className="object-cover opacity-90"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="mt-6 space-y-1">
+              <h3 className="text-white text-lg font-medium tracking-wide">Rajan Mehta</h3>
+              <p className="text-gray-600 text-xs font-bold tracking-widest uppercase">Founder House of Brands</p>
+            </div>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6 text-lg text-gray-800 leading-relaxed"
-            >
-              <p>
-                Rajan Mehta is a seasoned entrepreneur and industry leader with over two decades of experience in the watch and fashion accessories business. As an alumnus of IIM Calcutta, he blends strategic vision with creative innovation.
-              </p>
-              <p>
-                Currently serving as a Partner at Myntra for Private Labels and Director of House of Brands, Rajan has been instrumental in shaping the Indian fashion landscape. He has developed over 800 unique watch models and successfully served over 10 million customers.
-              </p>
-              <p>
-                From heritage brands like <strong>House of Pataudi</strong> to youth-centric labels like <strong>Wrogn</strong>, his expertise spans across diverse market segments, ensuring every product finds its rightful audience.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-12 grid grid-cols-2 gap-8 border-t border-gray-200 pt-8"
-            >
-              <div>
-                <h4 className="font-bold text-xl mb-2">Education</h4>
-                <p className="text-gray-600">Master’s from IIM Calcutta</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-xl mb-2">Expertise</h4>
-                <p className="text-gray-600">OEM, Brand Development, Retail Strategy</p>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </div>
     </section>
   );
 }
-
