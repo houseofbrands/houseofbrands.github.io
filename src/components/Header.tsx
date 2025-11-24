@@ -4,6 +4,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Header() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -12,20 +19,23 @@ export default function Header() {
       className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tighter">
+        <Link href="/" className="text-xl font-bold tracking-tighter" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           RAJAN MEHTA
         </Link>
 
         <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-          <Link href="#work" className="hover:text-white transition-colors">
+          <button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors">
+            ABOUT
+          </button>
+          <button onClick={() => scrollToSection('work')} className="hover:text-white transition-colors">
             WORK
-          </Link>
-          <Link href="#philosophy" className="hover:text-white transition-colors">
-            PHILOSOPHY
-          </Link>
-          <Link href="#contact" className="hover:text-white transition-colors">
+          </button>
+          <button onClick={() => scrollToSection('expertise')} className="hover:text-white transition-colors">
+            EXPERTISE
+          </button>
+          <button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">
             CONTACT
-          </Link>
+          </button>
         </nav>
         
         {/* Mobile Menu Button Placeholder */}

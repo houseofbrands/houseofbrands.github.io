@@ -6,8 +6,8 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import About from "@/components/About";
-import Stats from "@/components/Stats";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
+import GlobalGallery from "@/components/GlobalGallery";
 import OEMSection from "@/components/OEMSection";
 import Partners from "@/components/Partners";
 import BrandModal from "@/components/BrandModal";
@@ -21,7 +21,8 @@ const brands = [
     tagline: "Break the Rules. Set the Trend.",
     description: "Edgy, youth-centric designs pushing boundaries. Creating a unique identity for the bold generation.",
     detailedDescription: "Wrogn represents the rebellious spirit of today's youth. Our collection isn't just about timekeeping; it's about making a statement. From unconventional dial designs to rugged straps, every piece is crafted for those who dare to be different.",
-    image: "/assets/Myntra/wrogn.jpg"
+    image: "/assets/Myntra/wrogn.jpg",
+    className: "md:col-span-2 md:row-span-2"
   },
   {
     title: "Dressberry",
@@ -29,7 +30,8 @@ const brands = [
     tagline: "Elegance in Every Second.",
     description: "Elegant and feminine timepieces designed for modern women.",
     detailedDescription: "Dressberry watches capture the essence of modern femininity. Blending delicate aesthetics with durable craftsmanship, our timepieces are the perfect accessory for the woman who commands attention with grace.",
-    image: "/assets/Myntra/dressberry.jpg"
+    image: "/assets/Myntra/dressberry.jpg",
+    className: "md:col-span-1 md:row-span-1"
   },
   {
     title: "Roadster",
@@ -37,7 +39,8 @@ const brands = [
     tagline: "Built for the Road Less Traveled.",
     description: "Trendy, rugged, and durable watches built for the urban explorer.",
     detailedDescription: "Inspired by the spirit of adventure, Roadster watches are engineered for durability and style. Whether you're navigating the urban jungle or exploring the great outdoors, these timepieces are your reliable companion.",
-    image: "/assets/Myntra/roadster.png"
+    image: "/assets/Myntra/roadster.png",
+    className: "md:col-span-1 md:row-span-1"
   },
   {
     title: "Mast & Harbour",
@@ -45,7 +48,8 @@ const brands = [
     tagline: "From Desk to Dinner.",
     description: "Classic and contemporary designs bridging work and leisure.",
     detailedDescription: "Mast & Harbour offers a seamless transition between professional and social settings. Our designs prioritize versatility, ensuring you look sharp whether you're in a boardroom meeting or at a weekend brunch.",
-    image: "/assets/Myntra/mastharbour.jpg"
+    image: "/assets/Myntra/mastharbour.jpg",
+    className: "md:col-span-1 md:row-span-2"
   },
   {
     title: "Killer",
@@ -53,7 +57,8 @@ const brands = [
     tagline: "Attitude on Your Wrist.",
     description: "Bold and stylish watches for those who dare to stand out.",
     detailedDescription: "Killer watches are for the trendsetters. With bold faces, striking color combinations, and an unapologetic attitude, this collection is designed for the generation that refuses to blend in.",
-    image: "/assets/Myntra/Killer.jpg"
+    image: "/assets/Myntra/Killer.jpg",
+    className: "md:col-span-2 md:row-span-1"
   },
   {
     title: "Provogue",
@@ -61,7 +66,8 @@ const brands = [
     tagline: "The Mark of Excellence.",
     description: "Timeless and premium styles crafted for the modern consumer.",
     detailedDescription: "Provogue stands for timeless elegance. Our premium formal collection combines traditional watchmaking cues with modern reliability, offering sophisticated timepieces for the discerning gentleman.",
-    image: "/assets/Myntra/provogue.png"
+    image: "/assets/Myntra/provogue.png",
+    className: "md:col-span-1 md:row-span-1"
   },
   {
     title: "House of Pataudi",
@@ -69,7 +75,8 @@ const brands = [
     tagline: "Royal Legacy, Modern Craft.",
     description: "Royal heritage meets modern aesthetics.",
     detailedDescription: "House of Pataudi watches are a tribute to India's royal heritage. Intricate detailing, classic silhouettes, and premium materials come together to create timepieces that exude nobility and grace.",
-    image: "/assets/Myntra/pataudi.jpg"
+    image: "/assets/Myntra/pataudi.jpg",
+    className: "md:col-span-1 md:row-span-1"
   },
   {
     title: "Anouk",
@@ -77,7 +84,8 @@ const brands = [
     tagline: "Culture in Contemporary Form.",
     description: "Fusion wear aesthetics translated into contemporary timepieces.",
     detailedDescription: "Anouk brings the vibrancy of ethnic fashion to the world of horology. Featuring motifs inspired by traditional Indian art forms, these watches are perfect for the modern woman who cherishes her roots.",
-    image: "/assets/categories/jewelry.jpg"
+    image: "/assets/categories/jewelry.jpg",
+    className: "md:col-span-2 md:row-span-1"
   },
   {
     title: "Fluid Luxe",
@@ -85,7 +93,8 @@ const brands = [
     tagline: "Precision Meets Art.",
     description: "Premium craftsmanship defining the new standard of luxury.",
     detailedDescription: "Fluid Luxe represents the pinnacle of our design capabilities. Focusing on minimalism and premium materials, this collection redefines what affordable luxury means in the modern watch market.",
-    image: "/assets/categories/watches.jpg"
+    image: "/assets/categories/watches.jpg",
+    className: "md:col-span-1 md:row-span-1"
   }
 ];
 
@@ -101,19 +110,21 @@ export default function Home() {
   return (
     <main className="bg-[#0a0a0a] min-h-screen text-[#ededed] font-sans selection:bg-white selection:text-black overflow-x-hidden">
       <Header />
-      
+
       <Hero />
-      
+
       <About />
 
       <ExperienceTimeline />
 
-      <section id="work" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <GlobalGallery />
+
+      <section id="work" className="pt-24 pb-40 px-6 md:px-12 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 border-b border-white/10 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
+          className="mb-32 border-b border-white/10 pb-12 flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div>
             <span className="text-sm text-gray-500 uppercase tracking-widest block mb-4">
@@ -128,7 +139,7 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(300px,auto)] gap-6 grid-flow-dense">
           {brands.map((brand, index) => (
             <ProjectCard
               key={index}
@@ -137,21 +148,22 @@ export default function Home() {
               category={brand.category}
               image={brand.image}
               onClick={() => openModal(brand)}
+              className={brand.className}
             />
           ))}
         </div>
       </section>
 
       <OEMSection />
-      
+
       <Partners />
-      
+
       <Footer />
 
-      <BrandModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        brand={selectedBrand} 
+      <BrandModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        brand={selectedBrand}
       />
     </main>
   );
