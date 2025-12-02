@@ -84,7 +84,7 @@ const brands = [
     tagline: "Culture in Contemporary Form.",
     description: "Fusion wear aesthetics translated into contemporary timepieces.",
     detailedDescription: "Anouk brings the vibrancy of ethnic fashion to the world of horology. Featuring motifs inspired by traditional Indian art forms, these watches are perfect for the modern woman who cherishes her roots.",
-    image: "/assets/categories/jewelry.jpg",
+    image: "/assets/Myntra/anouk.jpg",
     className: "md:col-span-2 md:row-span-1"
   },
   {
@@ -93,7 +93,16 @@ const brands = [
     tagline: "Precision Meets Art.",
     description: "Premium craftsmanship defining the new standard of luxury.",
     detailedDescription: "Fluid Luxe represents the pinnacle of our design capabilities. Focusing on minimalism and premium materials, this collection redefines what affordable luxury means in the modern watch market.",
-    image: "/assets/categories/watches.jpg",
+    image: "/assets/Myntra/Fluid.jpg",
+    className: "md:col-span-1 md:row-span-1"
+  },
+  {
+    title: "HRX",
+    category: "Active Lifestyle",
+    tagline: "Keep Going.",
+    description: "India's first homegrown fitness brand, inspired by Hrithik Roshan.",
+    detailedDescription: "HRX is not just a brand; it's a mission to enable and support people to be the best version of themselves. From high-performance workout gear to casual athleisure, HRX empowers you to keep going, no matter what.",
+    image: "/assets/Myntra/hrx.jpg",
     className: "md:col-span-1 md:row-span-1"
   }
 ];
