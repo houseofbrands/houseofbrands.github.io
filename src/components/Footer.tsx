@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Huge CTA */}
         <div className="mb-32">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -30,22 +30,22 @@ export default function Footer() {
             <span className="text-gray-600 hover:text-white transition-colors duration-500 cursor-default">BUILD</span> <br />
             FUTURE.
           </motion.h2>
-          
+
           <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
-            <a 
-              href="mailto:care@houseofbrands.in" 
+            <a
+              href="mailto:care@houseofbrands.in"
               className="group flex items-center gap-4 text-2xl md:text-3xl border-b border-white/20 pb-2 hover:border-white transition-colors"
             >
               care@houseofbrands.in
               <ArrowUpRight className="w-6 h-6 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
             </a>
-            <span className="text-gray-500">+91-9871000890</span>
+            <span className="text-gray-500">+852 5494 3024</span>
           </div>
         </div>
 
         {/* Grid Layout */}
         <div className="grid md:grid-cols-12 gap-12 border-t border-white/10 pt-12">
-          
+
           {/* Brand / Address */}
           <div className="md:col-span-4 space-y-6">
             <h3 className="text-xl font-bold tracking-tight">HOUSE OF BRANDS FASHION LLP</h3>
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Back to Top */}
           <div className="md:col-span-2 flex flex-col justify-between items-start md:items-end">
-            <button 
+            <button
               onClick={scrollToTop}
               className="group flex flex-col items-center gap-2 text-xs font-bold tracking-widest uppercase text-gray-500 hover:text-white transition-colors"
             >

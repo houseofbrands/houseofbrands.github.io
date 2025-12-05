@@ -11,9 +11,10 @@ interface ProjectCardProps {
   index: number;
   onClick: () => void;
   className?: string;
+  imageClassName?: string;
 }
 
-export default function ProjectCard({ title, category, image, index, onClick, className = "" }: ProjectCardProps) {
+export default function ProjectCard({ title, category, image, index, onClick, className = "", imageClassName = "" }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -30,7 +31,7 @@ export default function ProjectCard({ title, category, image, index, onClick, cl
           src={image}
           alt={title}
           fill
-          className="object-cover transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100 grayscale"
+          className={`object-cover transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100 grayscale ${imageClassName}`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
 

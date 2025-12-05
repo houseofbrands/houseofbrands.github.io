@@ -49,7 +49,8 @@ const brands = [
     description: "Classic and contemporary designs bridging work and leisure.",
     detailedDescription: "Mast & Harbour offers a seamless transition between professional and social settings. Our designs prioritize versatility, ensuring you look sharp whether you're in a boardroom meeting or at a weekend brunch.",
     image: "/assets/Myntra/mastharbour.jpg",
-    className: "md:col-span-1 md:row-span-2"
+    className: "md:col-span-1 md:row-span-2",
+    imageClassName: "!object-contain md:!object-cover"
   },
   {
     title: "Killer",
@@ -58,7 +59,8 @@ const brands = [
     description: "Bold and stylish watches for those who dare to stand out.",
     detailedDescription: "Killer watches are for the trendsetters. With bold faces, striking color combinations, and an unapologetic attitude, this collection is designed for the generation that refuses to blend in.",
     image: "/assets/Myntra/Killer.jpg",
-    className: "md:col-span-2 md:row-span-1"
+    className: "md:col-span-2 md:row-span-1",
+    imageClassName: "!object-contain md:!object-cover"
   },
   {
     title: "Provogue",
@@ -85,7 +87,8 @@ const brands = [
     description: "Fusion wear aesthetics translated into contemporary timepieces.",
     detailedDescription: "Anouk brings the vibrancy of ethnic fashion to the world of horology. Featuring motifs inspired by traditional Indian art forms, these watches are perfect for the modern woman who cherishes her roots.",
     image: "/assets/Myntra/anouk.jpg",
-    className: "md:col-span-2 md:row-span-1"
+    className: "md:col-span-2 md:row-span-1",
+    imageClassName: "!object-contain md:!object-cover"
   },
   {
     title: "Fluid Luxe",
@@ -158,6 +161,7 @@ export default function Home() {
               image={brand.image}
               onClick={() => openModal(brand)}
               className={brand.className}
+              imageClassName={brand.imageClassName}
             />
           ))}
         </div>
