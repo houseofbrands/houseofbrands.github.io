@@ -16,13 +16,13 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="pt-0 pb-32 bg-white text-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-24">
+    <section className="pt-0 pb-16 md:pb-32 bg-white text-black overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="border-t border-gray-200 pt-24"
+          className="border-t border-gray-200 pt-12 md:pt-24"
         >
           <span className="text-sm font-bold tracking-widest uppercase text-gray-500 mb-6 block">
             Network

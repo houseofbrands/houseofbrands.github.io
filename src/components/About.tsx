@@ -6,7 +6,7 @@ import { Diamond } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6 md:px-12 bg-[#0a0a0a] text-[#ededed] border-t border-white/10">
+    <section id="about" className="py-16 md:py-32 px-6 md:px-12 bg-[#0a0a0a] text-[#ededed] border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 relative">
           

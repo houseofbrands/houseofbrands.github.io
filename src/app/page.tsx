@@ -50,7 +50,8 @@ const brands = [
     detailedDescription: "Mast & Harbour offers a seamless transition between professional and social settings. Our designs prioritize versatility, ensuring you look sharp whether you're in a boardroom meeting or at a weekend brunch.",
     image: "/assets/Myntra/mastharbour.jpg",
     className: "md:col-span-1 md:row-span-2",
-    imageClassName: "!object-contain md:!object-cover"
+    imageClassName: "mast-harbour-mobile md:!rotate-0 md:!scale-100",
+    imageContainerClassName: "mast-harbour-container"
   },
   {
     title: "Killer",
@@ -131,12 +132,12 @@ export default function Home() {
 
       <GlobalGallery />
 
-      <section id="work" className="pt-24 pb-40 px-6 md:px-12 max-w-7xl mx-auto">
+      <section id="work" className="pt-16 md:pt-24 pb-20 md:pb-40 px-6 md:px-12 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-32 border-b border-white/10 pb-12 flex flex-col md:flex-row md:items-end justify-between gap-6"
+          className="mb-16 md:mb-32 border-b border-white/10 pb-8 md:pb-12 flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div>
             <span className="text-sm text-gray-500 uppercase tracking-widest block mb-4">
@@ -162,6 +163,7 @@ export default function Home() {
               onClick={() => openModal(brand)}
               className={brand.className}
               imageClassName={brand.imageClassName}
+              imageContainerClassName={brand.imageContainerClassName}
             />
           ))}
         </div>

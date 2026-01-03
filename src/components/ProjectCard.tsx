@@ -12,9 +12,10 @@ interface ProjectCardProps {
   onClick: () => void;
   className?: string;
   imageClassName?: string;
+  imageContainerClassName?: string;
 }
 
-export default function ProjectCard({ title, category, image, index, onClick, className = "", imageClassName = "" }: ProjectCardProps) {
+export default function ProjectCard({ title, category, image, index, onClick, className = "", imageClassName = "", imageContainerClassName = "" }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -25,7 +26,7 @@ export default function ProjectCard({ title, category, image, index, onClick, cl
       className={`group cursor-pointer relative flex flex-col ${className}`}
     >
       {/* Image Container */}
-      <div className="relative w-full flex-grow overflow-hidden bg-[#111] mb-4 min-h-[300px]">
+      <div className={`relative w-full flex-grow overflow-hidden bg-[#111] mb-4 min-h-[300px] ${imageContainerClassName}`}>
         <div className="absolute inset-0 z-10 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
         <Image
           src={image}
@@ -42,7 +43,7 @@ export default function ProjectCard({ title, category, image, index, onClick, cl
       </div>
 
       {/* Typography */}
-      <div className="flex flex-col items-start relative overflow-hidden mt-auto">
+      <div className="flex flex-col items-center md:items-start relative overflow-hidden mt-auto text-center md:text-left">
         <h3 className="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-500 transition-all duration-300 transform translate-y-0">
           {title}
         </h3>

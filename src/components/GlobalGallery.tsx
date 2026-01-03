@@ -16,8 +16,8 @@ const images = [
 
 export default function GlobalGallery() {
   return (
-    <section className="bg-[#0a0a0a] pt-40 pb-24 overflow-hidden border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-24">
+    <section className="bg-[#0a0a0a] pt-20 md:pt-40 pb-12 md:pb-24 overflow-hidden border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-24">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

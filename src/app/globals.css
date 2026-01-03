@@ -60,3 +60,20 @@ body {
 .animate-marquee2 {
   animation: marquee2 25s linear infinite;
 }
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  /* Mast & Harbour image rotation and zoom for mobile */
+  .mast-harbour-mobile {
+    transform: rotate(-90deg) scale(1.1);
+    transform-origin: center center;
+    object-fit: contain !important;
+  }
+  
+  /* Container adjustments for rotated image */
+  .mast-harbour-container {
+    min-height: 350px !important;
+    overflow: visible !important;
+    padding: 40px 0 !important;
+  }
+}

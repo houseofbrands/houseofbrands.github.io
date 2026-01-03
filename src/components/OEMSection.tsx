@@ -32,9 +32,9 @@ const capabilities = [
 
 export default function OEMSection() {
   return (
-    <section id="expertise" className="py-40 px-6 md:px-12 bg-[#f5f5f5] text-black border-t border-gray-200">
+    <section id="expertise" className="py-20 md:py-40 px-6 md:px-12 bg-[#f5f5f5] text-black border-t border-gray-200">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-20 items-start">
+        <div className="grid lg:grid-cols-12 gap-12 md:gap-20 items-start">
           
           {/* Left Column - Vision */}
           <div className="lg:col-span-5 sticky top-32">

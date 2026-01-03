@@ -28,13 +28,13 @@ const history = [
 
 export default function ExperienceTimeline() {
   return (
-    <section className="py-40 px-6 md:px-12 bg-[#111] text-white border-t border-white/10">
+    <section className="py-20 md:py-40 px-6 md:px-12 bg-[#111] text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-32"
+          className="mb-16 md:mb-32"
         >
           <span className="text-sm font-bold tracking-widest uppercase text-gray-500 mb-8 block">
             23 Years of Excellence

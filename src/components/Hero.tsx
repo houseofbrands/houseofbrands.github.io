@@ -11,7 +11,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-between px-6 md:px-12 pt-32 pb-12 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-between px-6 md:px-12 pt-24 md:pt-32 pb-10 md:pb-12 relative overflow-hidden">
       
       {/* Subtle Background Gradient */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
@@ -21,10 +21,10 @@ export default function Hero() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex items-center gap-4 mb-8"
+          className="flex items-center gap-4 mb-8 md:mb-8"
         >
-          <div className="h-px w-12 bg-white/30" />
-          <span className="text-gray-400 text-sm md:text-base tracking-[0.2em] uppercase font-medium">
+          <div className="h-px w-12 md:w-16 bg-white/30" />
+          <span className="text-gray-400 text-base md:text-base tracking-[0.2em] uppercase font-medium">
             CEO House of Brands
           </span>
         </motion.div>
@@ -33,7 +33,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.9] mb-12"
+          className="text-6xl md:text-9xl font-bold tracking-tighter leading-[1.0] mb-12 md:mb-12"
         >
           BRIDGING <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-600">
@@ -45,8 +45,8 @@ export default function Hero() {
       </div>
 
       {/* Integrated Stats */}
-      <div className="max-w-7xl w-full mx-auto border-t border-white/10 pt-8 z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl w-full mx-auto border-t border-white/10 pt-8 md:pt-8 z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -54,10 +54,10 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 + (index * 0.1) }}
             >
-              <span className="block text-3xl md:text-4xl font-bold tracking-tighter mb-1">
+              <span className="block text-4xl md:text-4xl font-bold tracking-tighter mb-2">
                 {stat.value}
               </span>
-              <span className="text-xs text-gray-500 uppercase tracking-widest">
+              <span className="text-xs text-gray-500 uppercase tracking-widest leading-relaxed">
                 {stat.label}
               </span>
             </motion.div>
