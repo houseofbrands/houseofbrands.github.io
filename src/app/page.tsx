@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import About from "@/components/About";
@@ -172,6 +173,8 @@ export default function Home() {
       <OEMSection />
 
       <Partners />
+
+      <ContactForm />
 
       <Footer />
 

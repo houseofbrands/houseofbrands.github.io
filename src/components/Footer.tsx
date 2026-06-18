@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="bg-[#0a0a0a] text-[#ededed] pt-20 md:pt-40 pb-8 md:pb-12 px-6 md:px-12 border-t border-white/10 overflow-hidden relative">
+    <footer className="bg-[#0a0a0a] text-[#ededed] pt-20 md:pt-40 pb-8 md:pb-12 px-6 md:px-12 border-t border-white/10 overflow-hidden relative">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Huge CTA */}
         <div className="mb-16 md:mb-32 text-center md:text-left">
@@ -33,13 +33,12 @@ export default function Footer() {
 
           <div className="flex flex-col items-center md:items-start md:flex-row gap-4 md:gap-16">
             <a
-              href="mailto:care@houseofbrands.in"
+              href="mailto:rajan@houseofbrands.in"
               className="group flex items-center gap-4 text-2xl md:text-3xl border-b border-white/20 pb-2 hover:border-white transition-colors"
             >
-              care@houseofbrands.in
+              rajan@houseofbrands.in
               <ArrowUpRight className="w-6 h-6 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
             </a>
-            <span className="text-gray-500">+852 5494 3024</span>
           </div>
         </div>
 
